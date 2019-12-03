@@ -7,7 +7,7 @@ namespace AdventOfCode.Solutions
     {
         static void Main(string[] args)
         {
-            var currentDay = new Day01();
+            var currentDay = new Day03();
             currentDay.Part1();
             currentDay.Part2();
             Console.ReadKey();

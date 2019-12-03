@@ -7,20 +7,20 @@ namespace AdventOfCode.Solutions
 {
     abstract class Day
     {
-        private readonly int day;
+        // Shamelessly stolen from johgro
+        protected List<string> input;
 
-        public Day(int day)
+        public Day()
         {
-            this.day = day;
+            input = GetInput(int.Parse(GetType().Name.Substring(3)));
         }
 
-        public List<string> GetInput()
+        private List<string> GetInput(int day)
         {
-            // Shamelessly stolen from johgro
             var sessionValue = File.ReadAllText(@"C:\git\AdventOfCode2019\AdventOfCode.Solutions\session.txt");
             var client = new RestClient("https://adventofcode.com/2019/day");
             var req = new RestRequest($"{day}/input");
-            req.AddCookie("session",sessionValue);
+            req.AddCookie("session", sessionValue);
             var resp = client.Execute(req);
             return resp.Content.Split('\n').Where(o => !string.IsNullOrEmpty(o)).ToList();
         }

@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace AdventOfCode.Solutions.Days
 {
     class Day03 : Day
     {
-        public Day03() : base(3) { }
+        public Day03() { }
 
         public override void Part1()
         {
-            var input = GetInput();
             var wire1 = input[0].Split(',').ToList();
             var wire2 = input[1].Split(',').ToList();
             var closestIntersectionDistance = MoveWire(wire1)
@@ -26,7 +24,6 @@ namespace AdventOfCode.Solutions.Days
         }
         public override void Part2()
         {
-            var input = GetInput();
             var wire1 = input[0].Split(',').ToList();
             var wire2 = input[1].Split(',').ToList();
             var wire1positions = MoveWire(wire1);

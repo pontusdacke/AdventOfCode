@@ -6,16 +6,15 @@ namespace AdventOfCode.Solutions.Days
 {
     class Day02 : Day
     {
-        public Day02() : base(2) { }
+        public Day02() { }
 
         public override void Part1()
         {
-            var input = GetInput()[0]
+            var program = input[0]
                 .Split(',')
                 .Select(x => int.Parse(x))
                 .ToList();
 
-            var program = input.ToList();
             program[1] = 12;
             program[2] = 2;
             Console.WriteLine("Part 1: " + GetOutput(program));
@@ -23,7 +22,7 @@ namespace AdventOfCode.Solutions.Days
 
         public override void Part2()
         {
-            var input = GetInput()[0]
+            var program = input[0]
                 .Split(',')
                 .Select(x => int.Parse(x))
                 .ToList();
@@ -32,10 +31,10 @@ namespace AdventOfCode.Solutions.Days
             {
                 for (int j = 0; j < 99; j++)
                 {
-                    var program = input.ToList();
-                    program[1] = i;
-                    program[2] = j;
-                    var output = GetOutput(program);
+                    var tempProgram = program.ToList();
+                    tempProgram[1] = i;
+                    tempProgram[2] = j;
+                    var output = GetOutput(tempProgram);
                     if (output == 19690720)
                     {
                         Console.WriteLine($"Part 2: {i:D2}{j:D2}");
