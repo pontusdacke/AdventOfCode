@@ -16,6 +16,7 @@ namespace AdventOfCode.Solutions
 
         public List<string> GetInput()
         {
+            // Shamelessly stolen from johgro
             var sessionValue = File.ReadAllText(@"C:\git\AdventOfCode2019\AdventOfCode.Solutions\session.txt");
             var client = new RestClient("https://adventofcode.com/2019/day");
             var req = new RestRequest($"{day}/input");
