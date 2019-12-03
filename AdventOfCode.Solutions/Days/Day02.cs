@@ -1,36 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
-namespace AoC2019
+namespace AdventOfCode.Solutions.Days
 {
-    class Program
+    class Day02 : Day
     {
-        static void Main(string[] args)
+        public Day02() : base(2) { }
+
+        public override void Part1()
         {
-            var input = File
-                .ReadAllText("input.txt")
+            var input = GetInput()[0]
                 .Split(',')
                 .Select(x => int.Parse(x))
                 .ToList();
 
-            Part1(input);
-            Part2(input);
-
-            Console.ReadKey();
-        }
-
-        private static void Part1(List<int> input)
-        {
             var program = input.ToList();
             program[1] = 12;
             program[2] = 2;
             Console.WriteLine("Part 1: " + GetOutput(program));
         }
 
-        private static void Part2(List<int> input)
+        public override void Part2()
         {
+            var input = GetInput()[0]
+                .Split(',')
+                .Select(x => int.Parse(x))
+                .ToList();
+
             for (int i = 0; i < 99; i++)
             {
                 for (int j = 0; j < 99; j++)
@@ -47,7 +44,7 @@ namespace AoC2019
             }
         }
 
-        private static int GetOutput(List<int> program)
+        private int GetOutput(List<int> program)
         {
             for (int i = 0; i < program.Count; i++)
             {
