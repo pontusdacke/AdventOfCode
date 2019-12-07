@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AdventOfCode.Solutions
 {
-    abstract class Day
+    public abstract class Day
     {
         // Shamelessly stolen from johgro
         protected List<string> input;

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AdventOfCode.Solutions.Days
 {
-    class Day01 : Day
+    public class Day01 : Day
     {
         public Day01() { }
 

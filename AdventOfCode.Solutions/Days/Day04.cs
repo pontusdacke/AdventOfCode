@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AdventOfCode.Solutions.Days
 {
-    class Day04 : Day
+    public class Day04 : Day
     {
         public Day04() { }
 
@@ -26,7 +26,7 @@ namespace AdventOfCode.Solutions.Days
             List<int> numbers = new List<int>();
             for (int i = 307237; i < 769058; i++)
             {
-                if (IsIncreasing(i) && HasOnlyOneAdjacent(i))
+                if (IsIncreasing(i) && HasAtLeastOnePair(i))
                 {
                     numbers.Add(i);
                 }
@@ -62,10 +62,9 @@ namespace AdventOfCode.Solutions.Days
             return false;
         }
 
-        private bool HasOnlyOneAdjacent(int number)
+        public bool HasAtLeastOnePair(int number)
         {
             var digits = number.ToString();
-            var hasTwo = false;
             for (int i = 0; i < digits.Length - 1; i++)
             {
                 var currentCount = 1;
@@ -75,15 +74,16 @@ namespace AdventOfCode.Solutions.Days
                 {
                     currentCount++;
                     next++;
+                    i++;
                 }
 
                 if (currentCount == 2)
                 {
-                    hasTwo = true;
+                    return true;
                 }
             }
 
-            return hasTwo;
+            return false;
         }
     }
 }
