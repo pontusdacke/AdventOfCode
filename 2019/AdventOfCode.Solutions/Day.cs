@@ -7,12 +7,11 @@ namespace AdventOfCode.Solutions
 {
     public abstract class Day
     {
-        // Shamelessly stolen from johgro
-        protected List<string> input;
+        protected List<string> inputs;
 
         public Day()
         {
-            input = GetInput(int.Parse(GetType().Name.Substring(3)));
+            inputs = GetInput(int.Parse(GetType().Name.Substring(3)));
         }
 
         private List<string> GetInput(int day)

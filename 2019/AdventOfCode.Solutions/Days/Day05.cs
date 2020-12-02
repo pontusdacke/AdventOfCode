@@ -10,7 +10,7 @@ namespace AdventOfCode.Solutions.Days
         public override void Part1()
         {
             var intcodeComputer = new IntcodeComputer(new ComputerInput("1"), new ConsoleOutput());
-            var program = input[0]
+            var program = inputs[0]
                 .Split(',')
                 .Select(x => int.Parse(x))
                 .ToList();
@@ -22,7 +22,7 @@ namespace AdventOfCode.Solutions.Days
         public override void Part2()
         {
             var intcodeComputer = new IntcodeComputer(new ComputerInput("5"), new ConsoleOutput());
-            var program = input[0]
+            var program = inputs[0]
                 .Split(',')
                 .Select(x => int.Parse(x))
                 .ToList();

@@ -6,7 +6,7 @@ namespace AdventOfCode.Solutions
     {
         static void Main(string[] args)
         {
-            var currentDay = new Day05();
+            var currentDay = new Day06();
             currentDay.Part1();
             currentDay.Part2();
         }

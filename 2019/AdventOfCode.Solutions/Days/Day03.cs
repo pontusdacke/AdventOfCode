@@ -8,8 +8,8 @@ namespace AdventOfCode.Solutions.Days
     {
         public override void Part1()
         {
-            var wire1 = input[0].Split(',').ToList();
-            var wire2 = input[1].Split(',').ToList();
+            var wire1 = inputs[0].Split(',').ToList();
+            var wire2 = inputs[1].Split(',').ToList();
             var closestIntersectionDistance = MoveWire(wire1)
                 .Concat(MoveWire(wire2))
                 .GroupBy(x => new { x.x, x.y })
@@ -22,8 +22,8 @@ namespace AdventOfCode.Solutions.Days
         }
         public override void Part2()
         {
-            var wire1 = input[0].Split(',').ToList();
-            var wire2 = input[1].Split(',').ToList();
+            var wire1 = inputs[0].Split(',').ToList();
+            var wire2 = inputs[1].Split(',').ToList();
             var wire1positions = MoveWire(wire1);
             var wire2positions = MoveWire(wire2);
             var minimumStepsToIntersection = MoveWire(wire1)
