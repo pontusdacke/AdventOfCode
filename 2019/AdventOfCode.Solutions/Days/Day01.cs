@@ -5,8 +5,6 @@ namespace AdventOfCode.Solutions.Days
 {
     public class Day01 : Day
     {
-        public Day01() { }
-
         public override void Part1()
         {
             var sum = input.Sum(x => Math.Floor(int.Parse(x) / 3d) - 2);

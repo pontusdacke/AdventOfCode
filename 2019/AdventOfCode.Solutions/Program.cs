@@ -1,5 +1,4 @@
 ﻿using AdventOfCode.Solutions.Days;
-using System;
 
 namespace AdventOfCode.Solutions
 {
@@ -10,7 +9,6 @@ namespace AdventOfCode.Solutions
             var currentDay = new Day05();
             currentDay.Part1();
             currentDay.Part2();
-            Console.ReadKey();
         }
     }
 }

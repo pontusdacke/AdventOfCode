@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AdventOfCode.Solutions.Computers;
+using System;
 using System.Linq;
 
 namespace AdventOfCode.Solutions.Days
 {
     public class Day02 : Day
     {
-        public Day02() { }
+        private readonly IntcodeComputer intcodeComputer = new IntcodeComputer(new ComputerInput("0"), new ConsoleOutput());
 
         public override void Part1()
         {
@@ -17,7 +17,7 @@ namespace AdventOfCode.Solutions.Days
 
             program[1] = 12;
             program[2] = 2;
-            Console.WriteLine("Part 1: " + GetOutput(program));
+            Console.WriteLine("Part 1: " + intcodeComputer.GetProgramOutput(program));
         }
 
         public override void Part2()
@@ -34,39 +34,13 @@ namespace AdventOfCode.Solutions.Days
                     var tempProgram = program.ToList();
                     tempProgram[1] = i;
                     tempProgram[2] = j;
-                    var output = GetOutput(tempProgram);
+                    var output = intcodeComputer.GetProgramOutput(tempProgram);
                     if (output == 19690720)
                     {
                         Console.WriteLine($"Part 2: {i:D2}{j:D2}");
                     }
                 }
             }
-        }
-
-        private int GetOutput(List<int> program)
-        {
-            for (int i = 0; i < program.Count; i++)
-            {
-                var current = i * 4;
-                var op = program[current];
-                var inp1 = program[current + 1];
-                var inp2 = program[current + 2];
-                var output = program[current + 3];
-
-                switch (op)
-                {
-                    case 1:
-                        program[output] = program[inp1] + program[inp2];
-                        break;
-                    case 2:
-                        program[output] = program[inp1] * program[inp2];
-                        break;
-                    case 99:
-                        return program[0];
-                }
-            }
-            
-            return program[0];
         }
     }
 }

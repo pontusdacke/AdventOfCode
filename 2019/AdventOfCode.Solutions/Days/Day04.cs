@@ -6,8 +6,6 @@ namespace AdventOfCode.Solutions.Days
 {
     public class Day04 : Day
     {
-        public Day04() { }
-
         public override void Part1()
         {
             List<int> numbers = new List<int>();

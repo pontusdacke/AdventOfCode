@@ -6,8 +6,6 @@ namespace AdventOfCode.Solutions.Days
 {
     public class Day03 : Day
     {
-        public Day03() { }
-
         public override void Part1()
         {
             var wire1 = input[0].Split(',').ToList();

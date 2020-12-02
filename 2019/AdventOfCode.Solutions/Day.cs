@@ -17,7 +17,7 @@ namespace AdventOfCode.Solutions
 
         private List<string> GetInput(int day)
         {
-            var sessionValue = File.ReadAllText(@"C:\git\AdventOfCode2019\AdventOfCode.Solutions\session.txt");
+            var sessionValue = File.ReadAllText(@"session.txt");
             var client = new RestClient("https://adventofcode.com/2019/day");
             var req = new RestRequest($"{day}/input");
             req.AddCookie("session", sessionValue);
