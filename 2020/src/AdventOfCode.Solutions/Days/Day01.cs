@@ -8,11 +8,11 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
         {
             const int sumToFind = 2020;
 
-            for (int i = 0; i < input.Count; i++)
-                for (int j = i + 1; j < input.Count; j++)
+            for (int i = 0; i < inputs.Count; i++)
+                for (int j = i + 1; j < inputs.Count; j++)
                 {
-                    var x = int.Parse(input[i]);
-                    var y = int.Parse(input[j]);
+                    var x = int.Parse(inputs[i]);
+                    var y = int.Parse(inputs[j]);
                     if (x + y == sumToFind)
                     {
                         Console.WriteLine("Part 1 answer: " + x * y);
@@ -25,13 +25,13 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
         {
             const int sumToFind = 2020;
 
-            for (int i = 0; i < input.Count; i++)
-                for (int j = i + 1; j < input.Count; j++)
-                    for (int k = j + 1; k < input.Count; k++)
+            for (int i = 0; i < inputs.Count; i++)
+                for (int j = i + 1; j < inputs.Count; j++)
+                    for (int k = j + 1; k < inputs.Count; k++)
                     {
-                        var x = int.Parse(input[i]);
-                        var y = int.Parse(input[j]);
-                        var z = int.Parse(input[k]);
+                        var x = int.Parse(inputs[i]);
+                        var y = int.Parse(inputs[j]);
+                        var z = int.Parse(inputs[k]);
                         if (x + y + z == sumToFind)
                         {
                             Console.WriteLine("Part 2 answer: " + x * y * z);
