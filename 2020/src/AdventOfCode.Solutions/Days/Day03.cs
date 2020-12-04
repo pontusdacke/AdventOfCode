@@ -25,15 +25,15 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 
         private long CountTreesInSlope(int right, int down)
         {
-            var width = inputs[0].Length;
-            var height = inputs.Count;
+            var width = Inputs[0].Length;
+            var height = Inputs.Count;
 
             var trees = 0L;
             var x = 0;
             var y = 0;
             while (y < height)
             {
-                if (inputs[y][x] == '#')
+                if (Inputs[y][x] == '#')
                 {
                     trees++;
                 }

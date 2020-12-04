@@ -9,7 +9,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
         {
             var validPasswords = 0;
 
-            foreach (var i in inputs)
+            foreach (var i in Inputs)
             {
                 var parameters = InputParameters.FromInput(i);
                 var occurences = parameters.Password.Count(c => c == parameters.Letter);
@@ -27,7 +27,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
         {
             var validPasswords = 0;
 
-            foreach (var i in inputs)
+            foreach (var i in Inputs)
             {
                 var parameters = InputParameters.FromInput(i);
 
