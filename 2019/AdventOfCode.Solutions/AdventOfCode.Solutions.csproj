@@ -59,6 +59,7 @@
     <Compile Include="Computers\IComputerInput.cs" />
     <Compile Include="Computers\IntcodeComputer.cs" />
     <Compile Include="Days\Day06.cs" />
+    <Compile Include="Days\Day06IDontKnowRecursion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
