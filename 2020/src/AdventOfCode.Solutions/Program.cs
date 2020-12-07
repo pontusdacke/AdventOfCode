@@ -6,7 +6,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions
     {
         static void Main(string[] args)
         {
-            var today = new Day06();
+            var today = new Day07();
             today.Part1();
             today.Part2();
         }
