@@ -23,11 +23,8 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                     var bag = rule[0].Replace(" bags", string.Empty);
                     var contains = rule[1];
 
-                    if (contains.Contains("shiny gold"))
-                    {
-                        bags.Add(bag);
-                    }
-                    else if (bags.Any(b => contains.Contains(b)))
+                    if (contains.Contains("shiny gold")
+                        || bags.Any(b => contains.Contains(b)))
                     {
                         bags.Add(bag);
                     }
