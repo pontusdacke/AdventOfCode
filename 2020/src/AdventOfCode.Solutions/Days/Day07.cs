@@ -20,7 +20,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 foreach (var ruleInput in Inputs)
                 {
                     var rule = ruleInput.Split("contain");
-                    var bag = Regex.Match(rule[0], @"(.+) bag[s?]").Groups[1].Value;
+                    var bag = rule[0].Replace(" bags", string.Empty);
                     var contains = rule[1];
 
                     if (contains.Contains("shiny gold"))
