@@ -42,8 +42,8 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             var total = CountBags(allBags, goldBag);
 
             timer.Stop();
-            var totalWithErrorCorrection = total - 1;
-            Console.WriteLine($"Part 2: {totalWithErrorCorrection}, in {timer.ElapsedMilliseconds} ms");
+            var totalWithoutShinyBag = total - 1;
+            Console.WriteLine($"Part 2: {totalWithoutShinyBag}, in {timer.ElapsedMilliseconds} ms");
         }
 
         private List<Bag> ParseBags()
