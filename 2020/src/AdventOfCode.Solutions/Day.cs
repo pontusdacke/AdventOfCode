@@ -7,13 +7,16 @@ namespace PontusDacke.AdventOfCode2020.Solutions
 {
     public abstract class Day
     {
+        protected List<long> LongInputs { get; private set; }
         protected List<string> Inputs { get; private set; }
         protected string Input { get; private set; }
 
-        protected Day()
+        protected Day(bool parseLongs = false)
         {
             Input = GetInput(int.Parse(GetType().Name.Substring(3)));
             Inputs = Input.Split('\n').Where(o => !string.IsNullOrEmpty(o)).ToList();
+            if (parseLongs)
+            LongInputs = Inputs.Select(i => long.Parse(i)).ToList();
         }
 
         private string GetInput(int day)
