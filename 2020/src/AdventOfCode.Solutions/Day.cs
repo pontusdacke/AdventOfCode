@@ -15,13 +15,13 @@ namespace PontusDacke.AdventOfCode2020.Solutions
 
         protected Day(bool parseLongs = false)
         {
-            Input = GetInput(int.Parse(GetType().Name.Substring(3)));
+            Input = GetInput(int.Parse(GetType().Name[3..]));
             Inputs = Input.Split('\n').Where(o => !string.IsNullOrEmpty(o)).ToList();
             if (parseLongs)
-            LongInputs = Inputs.Select(i => long.Parse(i)).ToList();
+                LongInputs = Inputs.Select(i => long.Parse(i)).ToList();
         }
 
-        private string GetInput(int day)
+        private static string GetInput(int day)
         {
             var sessionValue = File.ReadAllText(@"session.txt");
             var client = new RestClient("https://adventofcode.com/2020/day");
@@ -34,15 +34,15 @@ namespace PontusDacke.AdventOfCode2020.Solutions
         public void Run()
         {
             var timer = Stopwatch.StartNew();
-            Part1();
-            Console.WriteLine($"Part 1 time elapsed: {timer.ElapsedMilliseconds}ms");
+            var part1Result = Part1();
+            Console.WriteLine($"Part 1: {part1Result}. Time elapsed: {timer.ElapsedMilliseconds}ms");
             timer.Restart();
-            Part2();
-            Console.WriteLine($"Part 2 time elapsed: {timer.ElapsedMilliseconds}ms");
-            timer.Stop()
+            var part2Result = Part2();
+            Console.WriteLine($"Part 2: {part2Result}. Time elapsed: {timer.ElapsedMilliseconds}ms");
+            timer.Stop();
         }
 
-        protected abstract void Part1();
-        protected abstract void Part2();
+        protected abstract long Part1();
+        protected abstract long Part2();
     }
 }

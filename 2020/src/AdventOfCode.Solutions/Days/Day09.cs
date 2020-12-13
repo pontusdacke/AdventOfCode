@@ -11,7 +11,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             : base(parseLongs: true)
         { }
 
-        protected override void Part1()
+        protected override long Part1()
         {
             for (int i = 25; i < LongInputs.Count; i++)
             {
@@ -20,10 +20,11 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 
                 if (!valids.Contains(LongInputs[i]))
                 {
-                    System.Console.WriteLine($"Part 1: {LongInputs[i]}");
-                    break;
+                    return LongInputs[i];
                 }
             }
+
+            throw new NoAnswerException();
         }
 
         private static HashSet<long> GetValidNumbers(List<long> preamble)
@@ -41,18 +42,21 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             return combinations;
         }
 
-        protected override void Part2()
+        protected override long Part2()
         {
             for (int i = 0; i < LongInputs.Count; i++)
             {
-                if (FindSetFromIndex(i))
+                var set = FindSetFromIndex(i);
+                if (set != null)
                 {
-                    break;
+                    return set.Value;
                 }
             }
+
+            throw new NoAnswerException();
         }
 
-        private bool FindSetFromIndex(int i)
+        private long? FindSetFromIndex(int i)
         {
             var contiguousSet = new List<long>();
             for (int j = i; j < LongInputs.Count; j++)
@@ -69,12 +73,11 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 {
                     var min = contiguousSet.Min();
                     var max = contiguousSet.Max();
-                    System.Console.WriteLine($"Part 2: {min + max}");
-                    return true;
+                    return min + max;
                 }
             }
 
-            return false;
+            return null;
         }
     }
 }

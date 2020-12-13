@@ -7,9 +7,8 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day07 : Day
     {
-        protected override void Part1()
+        protected override long Part1()
         {
-            var timer = Stopwatch.StartNew();
             var bags = new HashSet<string>();
             var previous = 0;
             do
@@ -29,21 +28,18 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 }
             } while (previous != bags.Count);
 
-            timer.Stop();
-            Console.WriteLine($"Part 1: {bags.Count}, in {timer.ElapsedMilliseconds} ms");
+            return bags.Count;
         }
 
-        protected override void Part2()
+        protected override long Part2()
         {
-            var timer = Stopwatch.StartNew();
             List<Bag> allBags = ParseBags();
 
             var goldBag = allBags.Single(bag => bag.Color == "shiny gold");
             var total = CountBags(allBags, goldBag);
 
-            timer.Stop();
             var totalWithoutShinyBag = total - 1;
-            Console.WriteLine($"Part 2: {totalWithoutShinyBag}, in {timer.ElapsedMilliseconds} ms");
+            return totalWithoutShinyBag;
         }
 
         private List<Bag> ParseBags()

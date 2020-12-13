@@ -4,7 +4,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     internal sealed class Day01 : Day
     {
-        protected override void Part1()
+        protected override long Part1()
         {
             const int sumToFind = 2020;
 
@@ -15,13 +15,14 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                     var y = int.Parse(Inputs[j]);
                     if (x + y == sumToFind)
                     {
-                        Console.WriteLine("Part 1 answer: " + x * y);
-                        return;
+                        return x * y;
                     }
                 }
+
+            throw new NoAnswerException();
         }
 
-        protected override void Part2()
+        protected override long Part2()
         {
             const int sumToFind = 2020;
 
@@ -34,10 +35,11 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                         var z = int.Parse(Inputs[k]);
                         if (x + y + z == sumToFind)
                         {
-                            Console.WriteLine("Part 2 answer: " + x * y * z);
-                            return;
+                            return x * y * z;
                         }
                     }
+
+            throw new NoAnswerException();
         }
     }
 }

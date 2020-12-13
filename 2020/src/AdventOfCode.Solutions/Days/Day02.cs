@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day02 : Day
     {
-        protected override void Part1()
+        protected override long Part1()
         {
             var validPasswords = 0;
 
@@ -20,10 +19,10 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 }
             }
 
-            Console.WriteLine($"Part 1: {validPasswords}");
+            return validPasswords;
         }
 
-        protected override void Part2()
+        protected override long Part2()
         {
             var validPasswords = 0;
 
@@ -38,7 +37,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 }
             }
 
-            Console.WriteLine($"Part 2: {validPasswords}");
+            return validPasswords;
         }
 
         private class InputParameters

@@ -1,17 +1,13 @@
-﻿using System;
-
-namespace PontusDacke.AdventOfCode2020.Solutions.Days
+﻿namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day03 : Day
     {
-        protected override void Part1()
+        protected override long Part1()
         {
-            var trees = CountTreesInSlope(3, 1);
-
-            Console.WriteLine($"Part 1: {trees}");
+            return CountTreesInSlope(3, 1);
         }
 
-        protected override void Part2()
+        protected override long Part2()
         {
             long slopeA = CountTreesInSlope(1, 1);
             long slopeB = CountTreesInSlope(3, 1);
@@ -20,7 +16,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             long slopeE = CountTreesInSlope(1, 2);
 
             var sum = slopeA * slopeB * slopeC * slopeD * slopeE;
-            Console.WriteLine($"Part 2: {sum}");
+            return sum;
         }
 
         private long CountTreesInSlope(int right, int down)

@@ -6,17 +6,15 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day05 : Day
     {
-        protected override void Part1()
+        protected override long Part1()
         {
-            var seatIds = GetTakenSeatIds();
-            Console.WriteLine($"Part 1: {seatIds.Max()}");
+            return GetTakenSeatIds().Max();
         }
 
-        protected override void Part2()
+        protected override long Part2()
         {
             var seats = GetTakenSeatIds().OrderBy(x => x).ToList();
-            int mySeatId = GetMySeatId(seats);
-            Console.WriteLine($"Part 2: {mySeatId}");
+            return GetMySeatId(seats);
         }
 
         private static int GetMySeatId(List<int> seats)
@@ -30,7 +28,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 }
             }
 
-            throw new Exception("No seats for me :(");
+            throw new NoAnswerException();
         }
 
         private IEnumerable<int> GetTakenSeatIds()

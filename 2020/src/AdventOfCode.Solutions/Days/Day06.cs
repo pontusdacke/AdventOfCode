@@ -5,28 +5,24 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day06 : Day
     {
-        protected override void Part1()
+        protected override long Part1()
         {
-            var result = Input
+            return Input
                 .Split("\n\n", StringSplitOptions.RemoveEmptyEntries)
                 .Sum(group => MergeParticipants(group)
                     .Distinct()
                     .Count());
-
-            Console.WriteLine($"Part 1: {result}");
         }
 
-        protected override void Part2()
+        protected override long Part2()
         {
-            var result = Input
+            return Input
                 .Split("\n\n", StringSplitOptions.RemoveEmptyEntries)
                 .Sum(group => MergeParticipants(group)
                     .GroupBy(c => c)
                     .Where(c => c.Count() == GetAmountOfParticipants(group))
                     .Distinct()
                     .Count());
-
-            Console.WriteLine($"Part 2: {result}");
         }
 
         private static int GetAmountOfParticipants(string group)

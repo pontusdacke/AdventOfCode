@@ -7,7 +7,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day04 : Day
     {
-        protected override void Part1()
+        protected override long Part1()
         {
             var validPassports = 0;
             var passports = Input.Split("\n\n");
@@ -27,11 +27,11 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 }
             }
 
-            Console.WriteLine($"Part 1: {validPassports}");
+            return validPassports;
         }
 
 
-        protected override void Part2()
+        protected override long Part2()
         {
             var validPassports = 0;
             var passports = Input.Split("\n\n");
@@ -51,7 +51,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 }
             }
 
-            Console.WriteLine($"Part 2: {validPassports}");
+            return validPassports;
         }
 
         private static bool ContainsFields(Dictionary<string, string> fields)
