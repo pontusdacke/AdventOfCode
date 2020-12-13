@@ -12,7 +12,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 .Select((value, index) => new Instruction
                 {
                     Operation = new string(value.AsSpan()[..3]),
-                    Argument = int.Parse(value.Substring(3)),
+                    Argument = int.Parse(value[3..]),
                 }).ToList();
 
             RunProgram(instructions, out var part1);
@@ -26,7 +26,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 .Select((value, index) => new Instruction
                 {
                     Operation = new string(value.AsSpan()[..3]),
-                    Argument = int.Parse(value.Substring(3)),
+                    Argument = int.Parse(value[3..]),
                 }).ToList();
 
             for (int i = 0; i < instructions.Count; i++)
