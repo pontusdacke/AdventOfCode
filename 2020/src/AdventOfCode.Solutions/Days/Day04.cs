@@ -7,7 +7,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day04 : Day
     {
-        public override void Part1()
+        protected override void Part1()
         {
             var validPassports = 0;
             var passports = Input.Split("\n\n");
@@ -31,7 +31,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
         }
 
 
-        public override void Part2()
+        protected override void Part2()
         {
             var validPassports = 0;
             var passports = Input.Split("\n\n");

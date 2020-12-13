@@ -4,14 +4,14 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day03 : Day
     {
-        public override void Part1()
+        protected override void Part1()
         {
             var trees = CountTreesInSlope(3, 1);
 
             Console.WriteLine($"Part 1: {trees}");
         }
 
-        public override void Part2()
+        protected override void Part2()
         {
             long slopeA = CountTreesInSlope(1, 1);
             long slopeB = CountTreesInSlope(3, 1);

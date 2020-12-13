@@ -6,13 +6,13 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day05 : Day
     {
-        public override void Part1()
+        protected override void Part1()
         {
             var seatIds = GetTakenSeatIds();
             Console.WriteLine($"Part 1: {seatIds.Max()}");
         }
 
-        public override void Part2()
+        protected override void Part2()
         {
             var seats = GetTakenSeatIds().OrderBy(x => x).ToList();
             int mySeatId = GetMySeatId(seats);

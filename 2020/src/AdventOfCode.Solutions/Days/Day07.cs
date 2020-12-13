@@ -7,7 +7,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day07 : Day
     {
-        public override void Part1()
+        protected override void Part1()
         {
             var timer = Stopwatch.StartNew();
             var bags = new HashSet<string>();
@@ -33,7 +33,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             Console.WriteLine($"Part 1: {bags.Count}, in {timer.ElapsedMilliseconds} ms");
         }
 
-        public override void Part2()
+        protected override void Part2()
         {
             var timer = Stopwatch.StartNew();
             List<Bag> allBags = ParseBags();

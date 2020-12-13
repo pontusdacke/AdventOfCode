@@ -1,5 +1,7 @@
 ﻿using RestSharp;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -29,7 +31,18 @@ namespace PontusDacke.AdventOfCode2020.Solutions
             return resp.Content;
         }
 
-        public abstract void Part1();
-        public abstract void Part2();
+        public void Run()
+        {
+            var timer = Stopwatch.StartNew();
+            Part1();
+            Console.WriteLine($"Part 1 time elapsed: {timer.ElapsedMilliseconds}ms");
+            timer.Restart();
+            Part2();
+            Console.WriteLine($"Part 2 time elapsed: {timer.ElapsedMilliseconds}ms");
+            timer.Stop()
+        }
+
+        protected abstract void Part1();
+        protected abstract void Part2();
     }
 }

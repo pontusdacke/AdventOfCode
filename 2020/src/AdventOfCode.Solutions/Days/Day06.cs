@@ -5,7 +5,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     class Day06 : Day
     {
-        public override void Part1()
+        protected override void Part1()
         {
             var result = Input
                 .Split("\n\n", StringSplitOptions.RemoveEmptyEntries)
@@ -16,7 +16,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             Console.WriteLine($"Part 1: {result}");
         }
 
-        public override void Part2()
+        protected override void Part2()
         {
             var result = Input
                 .Split("\n\n", StringSplitOptions.RemoveEmptyEntries)

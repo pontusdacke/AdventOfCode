@@ -4,7 +4,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
 {
     internal sealed class Day01 : Day
     {
-        public override void Part1()
+        protected override void Part1()
         {
             const int sumToFind = 2020;
 
@@ -21,7 +21,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
                 }
         }
 
-        public override void Part2()
+        protected override void Part2()
         {
             const int sumToFind = 2020;
 

@@ -11,7 +11,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             : base(parseLongs: true)
         { }
 
-        public override void Part1()
+        protected override void Part1()
         {
             for (int i = 25; i < LongInputs.Count; i++)
             {
@@ -41,7 +41,7 @@ namespace PontusDacke.AdventOfCode2020.Solutions.Days
             return combinations;
         }
 
-        public override void Part2()
+        protected override void Part2()
         {
             for (int i = 0; i < LongInputs.Count; i++)
             {
