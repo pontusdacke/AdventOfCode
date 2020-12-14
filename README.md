@@ -3,12 +3,12 @@
 ## 2020
 Language: C#  
 Goal of the year: 50 stars!
-⭐2/50
+⭐20/50
 
 ## 2019 
 Language: C#  
 Goal of the year: Survive  
-⭐8/50
+⭐12/50
 
 ## 2018
 Language: Python  
@@ -19,3 +19,10 @@ Goal of the year: Learn python
 Language: C#  
 Goal of the year: Wow, codeing puzzles.  
 ⭐37/50
+
+## 2016
+AWOL
+
+## 2015
+Language: C#  
+⭐8/50
