@@ -2,7 +2,7 @@
 
 ## 2020
 Language: C#  
-Goal of the year: 50 stars!
+Goal of the year: 50 stars!  
 ⭐21/50
 
 ## 2019 
