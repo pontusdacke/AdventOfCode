@@ -1,5 +1,13 @@
 # AdventOfCode
 
+## 2022
+Language: Kotlin  
+Goal of the year: Kotlin! (and maybe rust)  
+⭐2/50
+
+## 2021
+AWOL
+
 ## 2020
 Language: C#  
 Goal of the year: 50 stars!  
