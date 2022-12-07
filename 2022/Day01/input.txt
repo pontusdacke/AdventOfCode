@@ -1,20 +1,4 @@
-fun main() {
-    val splinput = input.split("\n\n")
-    var biggest = 0
-    for (i in splinput) {
-        val nums = i.split("\n")
-        var current = 0
-        for (n in nums) {
-            current += n.toInt()
-        }
-        if (current > biggest) {
-            biggest = current
-        }
-    }
-    print(biggest)
-}
-
-val input: String = """5118
+5118
 5554
 4186
 4729
@@ -2250,4 +2234,4 @@ val input: String = """5118
 3734
 1957
 1360
-1678"""
+1678
