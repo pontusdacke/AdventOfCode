@@ -17,25 +17,17 @@ fun main() {
     print(total)
 }
 
-fun getScore(opponent: Char, me: Char): Int {
-    return when (opponent) {
-        'A' -> when (me) {
-            'X' -> 3
-            'Y' -> 6
-            else -> 0
-        }
-        'B' -> when (me) {
-            'Y' -> 3
-            'Z' -> 6
-            else -> 0
-        }
-        'C' -> when (me) {
-            'Z' -> 3
-            'X' -> 6
-            else -> 0
-        }
+fun getScore(opponent: Char, me: Char): Int =
+    when (opponent to me) {
+        'A' to 'X',
+        'B' to 'Y',
+        'C' to 'Z' -> 3
+
+        'A' to 'Y',
+        'B' to 'Z',
+        'C' to 'X' -> 6
+
         else -> 0
     }
-}
 
 //kotlinc Part1.kt -include-runtime -d test.jar && kotlin -classpath test.jar Part1Kt
