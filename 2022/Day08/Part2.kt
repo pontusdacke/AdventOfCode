@@ -24,17 +24,24 @@ fun main() {
 }
 
 fun getScenicScore(n: Int, w: Int, h: Int, input: String): Int =
-    (lookUpDown(n, w, h, h + 1 until n, input)
-            * lookUpDown(n, w, h, h - 1 downTo 0, input)
-            * lookRightLeft(n, w, h, w + 1 until n, input)
-            * lookRightLeft(n, w, h, w - 1 downTo 0, input))
+    (look(n, w, h, input, h + 1 until n) { it * n + w }
+    * look(n, w, h, input, h - 1 downTo 0) { it * n + w }
+    * look(n, w, h, input, w + 1 until n) { h * n + it }
+    * look(n, w, h, input, w - 1 downTo 0) { h * n + it })
 
-fun lookRightLeft(n: Int, startW: Int, startH: Int, range: IntProgression, input: String): Int {
+fun look(
+    n: Int,
+    startW: Int,
+    startH: Int,
+    input: String,
+    range: IntProgression,
+    getCurrentIndex: (elem: Int) -> Int
+): Int {
     var visible = 0
     val centerTree = input[startH * n + startW].digitToInt()
 
     for (w in range) {
-        val currentIndex = startH * n + w
+        val currentIndex = getCurrentIndex(w)
         val currentTree = input[currentIndex].digitToInt()
         visible++
 
@@ -45,23 +52,5 @@ fun lookRightLeft(n: Int, startW: Int, startH: Int, range: IntProgression, input
 
     return visible
 }
-
-fun lookUpDown(n: Int, startW: Int, startH: Int, range: IntProgression, input: String): Int {
-    var visible = 0
-    val centerTree = input[startH * n + startW].digitToInt()
-
-    for (h in range) {
-        val currentIndex = h * n + startW
-        val currentTree = input[currentIndex].digitToInt()
-        visible++
-
-        if (currentTree >= centerTree) {
-            break
-        }
-    }
-
-    return visible
-}
-
 
 //kotlinc Part2.kt -include-runtime -d test.jar && kotlin -classpath test.jar Part2Kt
