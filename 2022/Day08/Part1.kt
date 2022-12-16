@@ -3,18 +3,21 @@ import java.io.InputStream
 
 fun main() {
     val inputStream: InputStream = File("input.txt").inputStream()
-    val input = inputStream.bufferedReader().use { it.readText() }
-    val input2 = input.split("\n").joinToString("")
+    val input = inputStream
+        .bufferedReader()
+        .use { it.readText() }
+        .split("\n")
+        .joinToString("")
 
     val n = 99
     val forest = BooleanArray(n * n) { false }
     var visibleTrees = n * 2 + (n - 2) * 2
 
     setOuterTreesVisible(forest, n)
-    visibleTrees += fromAbove(n, forest, input2)
-    visibleTrees += fromBelow(n, forest, input2)
-    visibleTrees += fromLeft(n, forest, input2)
-    visibleTrees += fromRight(n, forest, input2)
+    visibleTrees += fromAbove(n, forest, input)
+    visibleTrees += fromBelow(n, forest, input)
+    visibleTrees += fromLeft(n, forest, input)
+    visibleTrees += fromRight(n, forest, input)
     println(visibleTrees)
     printArray(forest, n)
 }
