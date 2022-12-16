@@ -24,32 +24,16 @@ fun main() {
 }
 
 fun getScenicScore(n: Int, w: Int, h: Int, input: String): Int =
-    (lookDown(n, input, w, h) * lookUp(n, input, w, h) * lookRight(n, input, w, h) * lookLeft(n, input, w, h))
+    (lookUpDown(n, w, h, h + 1 until n, input)
+            * lookUpDown(n, w, h, h - 1 downTo 0, input)
+            * lookRightLeft(n, w, h, w + 1 until n, input)
+            * lookRightLeft(n, w, h, w - 1 downTo 0, input))
 
-
-fun lookDown(n: Int, input: String, startW: Int, startH: Int): Int {
+fun lookRightLeft(n: Int, startW: Int, startH: Int, range: IntProgression, input: String): Int {
     var visible = 0
     val centerTree = input[startH * n + startW].digitToInt()
 
-    for (h in startH + 1 until n) {
-        val currentIndex = h * n + startW
-        val currentTree = input[currentIndex].digitToInt()
-
-        visible++
-
-        if (currentTree >= centerTree) {
-            break
-        }
-    }
-
-    return visible
-}
-
-fun lookRight(n: Int, input: String, startW: Int, startH: Int): Int {
-    var visible = 0
-    val centerTree = input[startH * n + startW].digitToInt()
-
-    for (w in startW + 1 until n) {
+    for (w in range) {
         val currentIndex = startH * n + w
         val currentTree = input[currentIndex].digitToInt()
         visible++
@@ -62,35 +46,13 @@ fun lookRight(n: Int, input: String, startW: Int, startH: Int): Int {
     return visible
 }
 
-fun lookLeft(n: Int, input: String, startW: Int, startH: Int): Int {
+fun lookUpDown(n: Int, startW: Int, startH: Int, range: IntProgression, input: String): Int {
     var visible = 0
     val centerTree = input[startH * n + startW].digitToInt()
 
-    if (startW - 1 < 0) return 0
-
-    for (w in startW - 1 downTo 0) {
-        val currentIndex = startH * n + w
-        val currentTree = input[currentIndex].digitToInt()
-        visible++
-
-        if (currentTree >= centerTree) {
-            break
-        }
-    }
-
-    return visible
-}
-
-fun lookUp(n: Int, input: String, startW: Int, startH: Int): Int {
-    var visible = 0
-    val centerTree = input[startH * n + startW].digitToInt()
-
-    if (startH - 1 < 0) return 0
-
-    for (h in startH - 1 downTo 0) {
+    for (h in range) {
         val currentIndex = h * n + startW
         val currentTree = input[currentIndex].digitToInt()
-
         visible++
 
         if (currentTree >= centerTree) {
