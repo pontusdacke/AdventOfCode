@@ -10,5 +10,5 @@ fun main() {
 Mac
 kotlinc Part1.kt -include-runtime -d test.jar && kotlin -classpath test.jar Part1Kt
 Windows
-kotlinc Part2.kt -include-runtime -d test.jar; kotlin -classpath test.jar Part1Kt
+kotlinc Part1.kt -include-runtime -d test.jar; kotlin -classpath test.jar Part1Kt
 */
