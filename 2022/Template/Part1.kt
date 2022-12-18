@@ -6,4 +6,9 @@ fun main() {
     val input = inputStream.bufferedReader().use { it.readText() }
 }
 
-//kotlinc Part1.kt -include-runtime -d test.jar && kotlin -classpath test.jar Part1Kt
+/*
+Mac
+kotlinc Part1.kt -include-runtime -d test.jar && kotlin -classpath test.jar Part1Kt
+Windows
+kotlinc Part2.kt -include-runtime -d test.jar; kotlin -classpath test.jar Part1Kt
+*/
