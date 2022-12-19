@@ -3,7 +3,7 @@
 ## 2022
 Language: Kotlin  
 Goal of the year: Kotlin! (and maybe rust)  
-⭐18/50
+⭐20/50
 
 ## 2021
 AWOL
