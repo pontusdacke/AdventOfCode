@@ -7,7 +7,7 @@ namespace December03
     {
         static void Main(string[] args)
         {
-            var input = 325489;
+            var input = 0;
             Console.WriteLine($"Distance input: {ManhattanDistanceInCirclularMatrix(input)}");
         }
 
@@ -42,12 +42,3 @@ namespace December03
         // Part two: https://oeis.org/A141481/b141481.txt
     }
 }
-/*
-37  36  35  34  33  32  31
-38  17  16  15  14  13  30
-39  18   5   4   3  12  29
-40  19   6   1   2  11  28
-41  20   7   8   9  10  27
-42  21  22  23  24  25  26
-43  44  45  46  47  48  49
-*/

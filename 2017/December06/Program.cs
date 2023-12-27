@@ -8,7 +8,7 @@ namespace December06
     {
         static void Main(string[] args)
         {
-            var input = "0	5	10	0	11	14	13	4	11	8	8	7	1	4	12	11"
+            var input = ""
                 .Split('\t')
                 .Select(x => Convert.ToInt32(x))
                 .ToArray();

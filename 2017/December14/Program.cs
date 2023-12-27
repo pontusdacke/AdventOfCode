@@ -10,9 +10,7 @@ namespace December14
     {
         static void Main(string[] args)
         {
-            // real: jzgqcdpd
-            // test: flqrgnkx
-            var input = "jzgqcdpd";
+            var input = "";
             var map = FindUsedSquares(input);
             Console.WriteLine(map.Sum(x => x.Count(y => y == '1')));
             Console.WriteLine(FindRegions(map));

@@ -8,11 +8,11 @@ namespace December15
     {
         static void Main(string[] args)
         {
-            long startA = 783;
-            long startB = 325;
+            long startA = 0;
+            long startB = 0;
 
-            long factorA = 16807;
-            long factorB = 48271;
+            long factorA = 0;
+            long factorB = 0;
 
             Console.WriteLine(JudgeSlamTheHammer(startA, startB, factorA, factorB));
             Console.WriteLine(LoopTroop(startA, startB, factorA, factorB));

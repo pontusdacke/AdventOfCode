@@ -11,12 +11,12 @@ namespace December10
     {
         static void Main(string[] args)
         {
-            var input = "83,0,193,1,254,237,187,40,88,27,2,255,149,29,42,100";
+            var input = "";
             var inputAsInts = input.Split(',').Select(x => Convert.ToInt32(x)).ToList();
             var badKnotHash = LetsKnot(inputAsInts, 256, 1);
             Console.WriteLine(badKnotHash[0] * badKnotHash[1]);
 
-            var extra = "17,31,73,47,23";
+            var extra = "";
             var inputAsBytes = input.Select(x => (int)x).Concat(extra.Split(',').Select(x => Convert.ToInt32(x))).ToList();
             var sparseHash = LetsKnot(inputAsBytes, 256, 64);
             var denseHash = ComputeDenseHash(sparseHash);
