@@ -1,5 +1,10 @@
 # AdventOfCode
 
+## 2023
+Language: C# (Script)
+Goal of the year: 404 goal not found
+⭐TBD/50
+
 ## 2022
 Language: Kotlin  
 Goal of the year: Kotlin! (and maybe rust)  
