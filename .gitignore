@@ -1,3 +1,9 @@
 .idea/
 *.jar
 *.iml
+
+input.txt
+input1.txt
+input2.txt
+test1.txt
+test2.txt
